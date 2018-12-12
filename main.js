@@ -24,14 +24,15 @@ $(document).ready(function() {
       }
       $(document).on('click', '.playercode', function() {
         var number = $(this).text();
+        console.log(number);
         for (var i = 0; i < arrayGiocatori.length; i++) {
           var playerIdNumber = arrayGiocatori[i].playerCode;
           if (number == playerIdNumber) {
-            var source   = $('#playerid').html();
+            var source = $('#playerid').html();
             var template = Handlebars.compile(source);
-            var context = {Codice: arrayGiocatori[i].playerCode, Punti: arrayGiocatori[i].points, Rimbalzi: arrayGiocatori[i].rebounds, Falli: arrayGiocatori[i].fouls, Percentuale2punti: arrayGiocatori[i].twoPoints, Percentuale3punti: arrayGiocatori[i].threePoints};
+            var context = {playerCode: arrayGiocatori[i].playerCode, points: arrayGiocatori[i].points, rebounds: arrayGiocatori[i].rebounds, fouls: arrayGiocatori[i].fouls, twoPoints: arrayGiocatori[i].twoPoints, threePoints: arrayGiocatori[i].threePoints};
             var html = template(context);
-            $('.player').html(html);
+            $('.player').append(html);
 
           }
         }
