@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.js" charset="utf-8"></script>
     <link rel="stylesheet" href="style.css">
     <title></title>
   </head>
@@ -10,14 +11,29 @@
     <div class="sidebar">
 
     </div>
+    <div class="player">
+
+    </div>
     <div class="template">
       <div class="playercode">
 
       </div>
 
-
-
     </div>
+    <script id="playerid" type="text/x-handlebars-template">
+      <div class="game">
+        <ul>
+          <li>Codice: {{playerCode}}</li>
+          <li>Punti: {{points}}</li>
+          <li>Rimbalzi: {{rebounds}}</li>
+          <li>Falli: {{fouls}}</li>
+          <li>Percentuale 2punti: {{twoPoints}}</li>
+          <li>Percentuale 3 punti: {{threePoints}}</li>
+        </ul>
+
+      </div>
+    </script>
+
 
 
     <script src="main.js" charset="utf-8"></script>

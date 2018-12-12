@@ -6,10 +6,20 @@
 
 .sidebar {
   width: 150px;
-  height: auto;
+  height: 100vh;
   background: red;
+  overflow-y: auto;
 }
 
+.sidebar, .player {
+  float: left;
+}
+
+.player {
+  width: calc(100% - 150px);
+  height: 100vh;
+  background: lightcoral;
+}
 .playercode {
   width: 100%;
   height: 40px;

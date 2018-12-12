@@ -20,12 +20,30 @@ $(document).ready(function() {
         playerCodeDiv.text(sidebar);
 
         $('.sidebar').append(playerCodeDiv);
-        console.log(playerCodeDiv);
+        console.log(arrayGiocatori);
       }
+      $(document).on('click', '.playercode', function() {
+        var number = $(this).text();
+        for (var i = 0; i < arrayGiocatori.length; i++) {
+          var playerIdNumber = arrayGiocatori[i].playerCode;
+          if (number == playerIdNumber) {
+            var source   = $('#playerid').html();
+            var template = Handlebars.compile(source);
+            var context = {Codice: arrayGiocatori[i].playerCode, Punti: arrayGiocatori[i].points, Rimbalzi: arrayGiocatori[i].rebounds, Falli: arrayGiocatori[i].fouls, Percentuale2punti: arrayGiocatori[i].twoPoints, Percentuale3punti: arrayGiocatori[i].threePoints};
+            var html = template(context);
+            $('.player').html(html);
 
+          }
+        }
+
+      });
     }
-
   });
+
+
+
+
+
 });
 
 
